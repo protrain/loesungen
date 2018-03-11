@@ -1,0 +1,52 @@
+int rechnung01 = 1 + 7 - 9 + 43;
+int rechnung02 = 43 - 9 + 7 + 1;
+int rechnung03 = 4 * 3 + 1;
+int rechnung04 = 9 * (2 + 1);
+int rechnung05 = 4 * 3 / 6;
+int rechnung06 = (3 - 7) * (7 + 4);
+int rechnung07 = 3 / 4;
+float rechnung08 = 3.0 / 4.0;
+int rechnung09 = 4 / 3 + 1 * 7;
+float rechnung10 = 4.0 / 3.0 + 1 * 7;
+int rechnung11 = 2 * 2 * 2 * 2 * 2 * 2 * 2;
+int rechnung12 = 42 / 7 / 3;
+int rechnung13 = 12 % 3;
+int rechnung14 = 13 % 5;
+
+int rechnung15 = 12345 / 10;
+int rechnung16 = 1234 / 10;
+int rechnung17 = 123 / 10;
+int rechnung18 = 12 / 10;
+int rechnung19 = 1 / 10;
+int rechnung20 = 12345 % 10;
+int rechnung21 = 1234 % 10;
+int rechnung22 = 123 % 10;
+int rechnung23 = 12 % 10;
+int rechnung24 = 1 % 10;
+
+println("1 + 7 - 9 + 43 = " + rechnung01);
+println("43 - 9 + 7 + 1 = " + rechnung02);
+println("4 * 3 + 1 = " + rechnung03);
+println("9 * (2 + 1) = " + rechnung04);
+println("4 * 3 / 6 = " + rechnung05);
+println("(3 - 7) * (7 + 4) = " + rechnung06);
+println("3 / 4 = " + rechnung07);
+println("3.0 / 4.0 = " + rechnung08);
+println("4 / 3 + 1 * 7 = " + rechnung09);
+println("4.0 / 3.0 + 1 * 7 = " + rechnung10);
+println("2 * 2 * 2 * 2 * 2 * 2 * 2 = " + rechnung11);
+println("42 / 7 / 3 = " + rechnung12);
+println("12 % 3 = " + rechnung13);
+println("13 % 5 = " + rechnung14);
+
+println("12345 / 10 = " + rechnung15);
+println("1234 / 10 = " + rechnung16);
+println("123 / 10 = " + rechnung17);
+println("12 / 10 = " + rechnung18);
+println("1 / 10 = " + rechnung19);
+println("12345 % 10 = " + rechnung20);
+println("1234 % 10 = " + rechnung21);
+println("123 % 10 = " + rechnung22);
+println("12 % 10 = " + rechnung23);
+println("1 % 10 = " + rechnung24);
+
