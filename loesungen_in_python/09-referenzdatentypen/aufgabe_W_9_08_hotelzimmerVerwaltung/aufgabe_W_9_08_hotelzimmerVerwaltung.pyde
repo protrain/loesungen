@@ -1,44 +1,71 @@
+# Öffentliche Klasse zur Repräsentation eines Hotelzimmers
 class Room:
-    """ Öffentliche Klasse zur Repräsentation eines Hotelzimmers """
+    # Konstruktor, der vorschreibt, dass die Zimmer-
+    # nummer angegeben wird
     def __init__(self, number):
-        """ Initialisierer, der vorschreibt, dass die Zimmer-
-        nummer angegeben wird """
-        self.number = number
-        self.available = True
+        self.__number = number
+        self.__available = True
 
+    # Öffentliche Methode zur Prüfung, ob das Zimmer
+    # noch frei ist.
+    def isAvailable(self):
+        return self.__available
+
+    # Öffentliche Methode um den Status der Zimmer-
+    # belegung zu ändern. Der zu setzende Status
+    # wird der Methode übergeben.
+    def setAvailable(self, available):
+        self.__available = available
+
+    # Methode, die die Zimmernummer zurückliefert.
+    def getNumber(self):
+        return self.__number
+
+
+# Öffentliche Klasse zur Zimmerverwaltung eines Hotels
 class Hotel:
-    """ Öffentliche Klasse zur Zimmerverwaltung eines Hotels """
+    # Öffentlicher Konstruktor, der den Hotelnamen, die
+    # Anzahl der Sterne sowie die Räume übergeben bekommt
     def __init__(self, name, stars, rooms):
-        """ Initialisierer, der den Hotelnamen, die
-        Anzahl der Sterne sowie die Räume übergeben bekommt """
-        self.rooms = rooms
-        self.name = name
-        self.stars = stars
+        self.__rooms = rooms
+        self.__name = name
+        self.__stars = stars
 
-    def check_in(self):
-        """ Öffentliche Methode, die den Index des nächsten freien Raums
-        zurückliefert """
+    # Öffentliche Methode, die den Index des nächsten freien Raums
+    # zurückliefert
+    def checkIn(self):
         # Gehe Räume nacheinander durch
         for room in rooms:
             # Sobald ein Raum frei ist
-            if room.available:
+            if room.isAvailable():
                 # Raum belegen
-                room.available = False
+                room.setAvailable(False)
                 # Aus der Funktion mit Nummer springen
-                return room.number
-        return None
+                return room.getNumber()
+        return 0
 
-    def check_out(self, number):
-        """ Öffentliche Methode, die einen Checkout-Vorgang simuliert. Die
-        Zimmernummer, für die der Checkout-Vorgang durchgeführt werden
-        soll, wird an die Methode übergeben. """
+    # Öffentliche Methode, die einen Checkout-Vorgang simuliert. Die
+    # Zimmernummer, für die der Checkout-Vorgang durchgeführt werden
+    # soll, wird an die Methode übergeben.
+    def checkOut(self, number):
+        # Zähler außerhalb von for-Schleife definieren,
+        # da wir sie danach noch brauchen könnten
+        i = 0
+
         # Gehe Räume nacheinander durch
         for room in rooms:
             # Stimmt Raumnummer überein und ist Raum noch belegt
-            if room.number == number and not room.available:
+            if room.getNumber() == number and room.isAvailable() == False:
                 # Aus Schleife springen
-                room.available = True
                 break
+            # Zähler erhöhen
+            i += 1
+
+        # Sollten wir vor Array-Ende aus Schleife
+        # gesprungen sein (= Raum gefunden + belegt),
+        # dann Raum auf verfügbar stellen
+        if i < len(rooms):
+            rooms[i].setAvailable(True)
 
 
 # Startpunkt des Hauptprogramms
@@ -46,6 +73,7 @@ class Hotel:
 # Testzwecken instanziiert und verwendet.
 
 rooms = []
+
 rooms.append(Room(101))
 rooms.append(Room(102))
 rooms.append(Room(103))
@@ -58,9 +86,9 @@ rooms.append(Room(303))
 
 hotel = Hotel("Seeblick", 4, rooms)
 
-print hotel.check_in()
-print hotel.check_in()
-print hotel.check_in()
-hotel.check_out(102)
-print hotel.check_in()
-print hotel.check_in()
+print hotel.checkIn()
+print hotel.checkIn()
+print hotel.checkIn()
+hotel.checkOut(102)
+print hotel.checkIn()
+print hotel.checkIn()

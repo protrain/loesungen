@@ -1,23 +1,25 @@
-from urllib import urlencode
-
 # Statische Klasse, die nur aus statischen Methoden besteht
 class Lyrics:
+
+    # Statische Methode, die die URL zu einem Songtext aufbaut.
+    # Als Eingabewerte werden Musiker und Titel an die Methode
+    # übergeben. Als Ergebnis wird der generierte URL zurückgegeben
     @staticmethod
-    def get_lyrics_url(artist, title):
-        """ Statische Methode, die die URL zu einem Songtext aufbaut.
-        Als Eingabewerte werden Musiker und Titel an die Methode
-        übergeben. Als Ergebnis wird der generierte URL zurückgegeben
-        """
+    def getLyricsURL(artist, title):
         # Konvertiere artist und title in Kleinschreibung
-        # und ersetze Leerzeichen mit Unterstrich
-        params = {
-            'func': 'getSong',
-            'artist': artist.lower().replace(' ', '_'),
-            'song': title.lower().replace(' ', '_'),
-        }
+        artist = artist.lower()
+        title = title.lower()
+
+        # Ersetze Leerzeichen mit Unterstrich
+        artist = artist.replace(' ', '_')
+        title = title.replace(' ', '_')
 
         # Baue URL
-        return "http://lyrics.wikia.com/api.php?%s" % urlencode(params)
+        url = "http://lyrics.wikia.com/api.php?func=getSong&artist="
+        url += artist + "&song=" + title
+
+        # Gebe URL zurück
+        return url
 
 
 # Startpunkt des Hauptprogramms

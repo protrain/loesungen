@@ -1,116 +1,148 @@
+# Öffentliche Klasse zur Repräsentation eines Listeneintrags
 class ListItem(object):
-    """ Öffentliche Klasse zur Repräsentation eines Listeneintrags """
 
+    # Öffentlicher Konstruktor, der einen Eintrag als String
+    # erwartet und als nicht überprüft voreinstellt
     def __init__(self, entry):
-        "" Öffentlicher Initialisierer, der einen Eintrag als String
-        erwartet und als nicht überprüft voreinstellt """
-        self.entry = entry
-        self.checked = False
+        self.__entry = entry
+        self.__checked = False
 
+    # Getter-Methode zur Abfrage des Entry-Strings
+    def getEntry(self):
+        return self.__entry
+
+    # Getter-Methode zur Abfrage des Überprüfungsstatus
+    def getChecked(self):
+        return self.__checked
+
+    # Setter-Methode mit dem Status als Parameter
+    def setChecked(self, checked):
+        self.__checked = checked
+
+    # Öffentliche Methode zur Repräsentation eines
+    # beschreibenden ListItem
     def __str__(self):
-        """ Öffentliche Methode zur Repräsentation eines
-        beschreibenden ListItem """
-        return "%s(%s)" % (self.entry, self.checked)
+        return self.getEntry() + " (" + str(self.getChecked()) + ")"
 
 
+# Öffentliche Klasse zur Verwaltung einer ToDoList
 class TodoList:
-    """ Öffentliche Klasse zur Verwaltung einer ToDoList """
 
+    # Öffentlicher Konstruktor mit der Initialisierung
+    # der internen Liste
     def __init__(self):
-        """ Öffentlicher Initialisierer erzeugt leere Liste """
-        self.list = []
+        self.__list = []
 
-    def add_item(self, item):
-        """ Öffentliche Methode zum Hinzufügen eines neuen
-        ListItems-Objekts """
-        self.list.append(item)
+    # Öffentliche Methode zum Hinzufügen eines neuen
+    # ListItems-Objekts
+    def addItem(self, item):
+        self.__list += [item]
 
-    def check_item(self, entry):
-        """ Öffentliche Methode zum Setzen des Status eines
-        Listeneintrags """
+    # Öffentliche Methode zum Setzen des Status eines
+    # Listeneintrags
+    def checkItem(self, entry):
         # Gehe Liste durch
-        for item in self.list:
+        for item in self.__list:
             # Wenn Eintrag mit Gesuchtem übereinstimmt, dann abhaken.
-            if item.entry == entry:
-                item.checked = True
+            if item.getEntry() == entry:
+                item.setChecked(True)
 
                 # Springe aus Schleife
                 break
 
+    # Methode zur Repräsentation aller Einträge in der
+    # To-do-Liste. Das Ergebnis wird von der Methode zurück-
+    # gegeben.
     def __str__(self):
-        """ Methode zur Repräsentation aller Einträge in der
-        To-do-Liste. Das Ergebnis wird von der Methode zurück-
-        gegeben. """
         # Rückgabestring
-        return "".join(map("{}\n".format, self.list))
+        output = ""
+
+        # Gehe jedes Element durch.
+        for item in self.__list:
+            # Packe toString Methode in Rückgabe
+            # und füge Zeilenumbruch hinzu
+            output += str(item) + "\n"
+
+        return output
 
 
+# Öffentliche Klasse zur Repräsentation eines Einkaufslisten-
+# eintrags. Hierzu wird von der Klasse ListItem abgeleitet, und
+# die für einen Einkaufslisteneintrag charakterisierenden Merkmale
+# werden hinzugefügt.
 class ShoppingItem(ListItem):
-    """ Öffentliche Klasse zur Repräsentation eines Einkaufslisten-
-    eintrags. Hierzu wird von der Klasse ListItem abgeleitet, und
-    die für einen Einkaufslisteneintrag charakterisierenden Merkmale
-    werden hinzugefügt. """
 
+    # Öffentlicher Konstruktor, der einen Eintrag als String sowie
+    # die Menge dieses Eintrags verlangt
     def __init__(self, entry, amount):
-        """ Öffentlicher Konstruktor, der einen Eintrag als String sowie
-        die Menge dieses Eintrags verlangt """
         # Aufruf des Basisklassenkonstruktors
         ListItem.__init__(self, entry)
 
         # Zusätzlich wird noch die Menge festgehalten.
-        self.amount = amount
+        self.__amount = amount
 
+    # Öffentliche Methode zur Repräsentation eines
+    # aussagekräftigen Strings für einen Einkaufslisteneintrag
     def __str__(self):
-        """ Öffentliche Methode zur Repräsentation eines
-        aussagekräftigen Strings für einen Einkaufslisteneintrag """"
         # rufe toString-Methode der Superklasse auf
-        return "%sx %s(%s)" % (self.amount, self.entry, self.checked)
+        return str(self.__amount) + "x " + self.getEntry() + \
+            " (" + str(self.getChecked()) + ")"
 
 
+# Klasse zur Verwaltung einer Shopping-Liste
 class ShoppingList:
-    """ Klasse zur Verwaltung einer Shopping-Liste """
 
+    # Öffentlicher Konstruktor, der die Liste initialisiert
     def __init__(self):
-        """ Öffentlicher Initialisierer erzeugt leere Liste """
-        self.list = []
+        self.__list = []
 
-    def add_item(self, item):
-        """ Öffentliche Methode zum Hinzufügen eines neuen
-        ListItems-Objekts """
-        self.list.append(item)
+    # Öffentliche Methode, die einen Listeneintrag in Form
+    # eines ListItem-Objekts entgegennimmt, um diesen dann
+    # in die Einkaufsliste zu setzen.
+    def addItem(self, item):
+        self.__list += [item]
 
-    def check_item(self, entry):
-        """ Öffentliche Methode zum Setzen des Status eines
-        Listeneintrags """
+    # Öffentliche Methode zum Setzen des Status eines
+    # Eintrags, der an die Methode übergeben wird
+    def checkItem(self, entry):
         # Gehe Liste durch
-        for item in self.list:
-            # Wenn Eintrag mit Gesuchtem übereinstimmt, dann abhaken.
-            if item.entry == entry:
-                item.checked = True
-
+        for item in self.__list:
+            # Wenn Eintrag mit Gesuchtem übereinstimmt
+            # dann abhaken
+            if item.getEntry() == entry:
+                item.setChecked(True)
                 # Springe aus Schleife
                 break
 
+    # Öffentliche Methode zur Repräsentation der Shopping-Liste.
     def __str__(self):
-        """Öffentliche Methode zur Repräsentation der Shopping-Liste. """
         # Rückgabestring
-        return "".join(map("{}\n".format, self.list))
+        output = ""
+
+        # gehe jedes Element durch
+        for item in self.__list:
+            # Packe toString-Methode in Rückgabe
+            # und füge Zeilenumbruch hinzu
+            output += str(item) + "\n"
+
+        return output
+
 
 # Startpunkt des Hauptprogramms
 # Hier werden die implementierten Klassen zu Demonstrations- und
 # Testzwecken instanziiert und verwendet.
 
 tdl = TodoList()
-tdl.add_item(ListItem("Erster Eintrag"))
-tdl.add_item(ListItem("Zweiter Eintrag"))
-tdl.check_item("Zweiter Eintrag")
+tdl.addItem(ListItem("Erster Eintrag"))
+tdl.addItem(ListItem("Zweiter Eintrag"))
+tdl.checkItem("Zweiter Eintrag")
 print tdl
 
 sl = ShoppingList()
-sl.add_item(ShoppingItem("Aepfel", 3))
-sl.add_item(ShoppingItem("Birnen", 1))
-sl.add_item(ShoppingItem("Toastbrot", 2))
-sl.add_item(ShoppingItem("Birnenbaum", 2))
+sl.addItem(ShoppingItem("Aepfel", 3))
+sl.addItem(ShoppingItem("Birnen", 1))
+sl.addItem(ShoppingItem("Toastbrot", 2))
+sl.addItem(ShoppingItem("Birnenbaum", 2))
 print sl
-sl.check_item("Birnen")
+sl.checkItem("Birnen")
 print sl

@@ -1,23 +1,23 @@
-from random import randint
 # Klasse, die das Quiz realisiert
 class MultiplicationQuiz:
+    # Konstruktor der Klasse
     def __init__(self):
-        """ Initialisiere Zahlen für Multiplikation """
-        self.a = 0
-        self.b = 0
+        # Initialisiere Zahlen für Multiplikation
+        self.__a = 0
+        self.__b = 0
 
-    def get_exercise(self):
-        """ Generiert neue Aufgabe """
+    # Generiert neue Aufgabe
+    def getExercise(self):
         # Generiere zufällige Zahlen für Multiplikation
-        self.a = randint(1, 20)
-        self.b = randint(1, 20)
+        self.__a = int(random(1, 20))
+        self.__b = int(random(1, 20))
 
         # Gebe String mit Aufgabe zurück
-        return "%s * %s = ?" % (self.a, self.b)
-    
+        return str(self.__a) + " * " + str(self.__b) + " = ?"
+
     # Gebe Ergebnis zurück
-    def get_result(self):
-        return self.a * self.b
+    def getResult(self):
+        return self.__a * self.__b
 
 
 # Startpunkt des Hauptprogramms
@@ -26,8 +26,8 @@ class MultiplicationQuiz:
 
 # Testfunktion
 quiz = MultiplicationQuiz()
-print quiz.get_exercise()
-print "Result: %s" % quiz.get_result()
+print quiz.getExercise()
+print "Result: " + str(quiz.getResult())
 
-print quiz.get_exercise()
-print "Result: %s" % quiz.get_result()
+print quiz.getExercise()
+print "Result: " + str(quiz.getResult())

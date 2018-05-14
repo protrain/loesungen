@@ -1,62 +1,78 @@
-def check_sudoku(sudoku):
-    """ Funktion zur Überprüfung einer Sudoku-Lösung auf Korrektheit.
-    Als Eingabe an die Funktion wird die Sudoku-Lösung in Form einer
-    Liste von Listen übergeben. Die Funktion gibt als Ergebnis
-    einen Wahrheitswert zurück. """
+# Funktion zur Überprüfung einer Sudoku-Lösung auf Korrektheit.
+# Als Eingabe an die Funktion wird die Sudoku-Lösung in Form eines
+# zweidimensionalen Arrays übergeben. Die Funktion gibt als Ergebnis
+# einen Wahrheitswert zurück.
+def checkSudoku(sudoku):
+    # Array, das die Anzahl der Vorkommnisse jeder Zahl aufschreibt
+    # Position: Zahl
+    # Inhalt an Position: Anzahl der Zahl
+    occurrences = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     # Prüfe Zeilen
     # Gehe jede Zeile durch
-    for line in sudoku:
-        occurrences = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for y in sudoku:
         # Gehe jedes Element in der Zeile durch
-        for number in line:
+        for x in y:
             # Erhöhe Zähler für Zahl um 1
-            occurrences[number - 1] += 1
+            occurrences[x] += 1
 
-        # Wenn Zahl häufiger als einmal vorkommt
-        # -> Keine gültige Lösung
-        if max(occurences) > 1:
-            return False
+        # Gehe Zähler-Array durch
+        for i in occurrences:
+            # Wenn Zahl häufiger als einmal vorkommt
+            # -> Keine gültige Lösung
+            if i > 1 and i != 0:
+                return False
+
+        # Zähler-Array wieder auf 0 setzen
+        occurrences = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     # Prüfe Spalten
     # Gehe jede Spalte durch
-    for column in range(8):
-        occurrences = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for x in range(0, 8):
         # Gehe jedes Element in der Spalte durch
-        for line in sudoku:
+        for y in range(0, 8):
             # Hole Zahl aus Position in Sudoku
-            number = line[column]
+            number = sudoku[y][x]
 
             # Erhöhe Zähler für Zahl um 1
-            occurrences[number - 1] += 1
+            occurrences[number] += 1
 
-        # Wenn Zahl häufiger als einmal vorkommt
-        # -> Keine gültige Lösung
-        if max(occurences) > 1:
-            return False
+        # Gehe Zähler-Array durch
+        for i in occurrences:
+            # Wenn Zahl häufiger als einmal vorkommt
+            # -> Keine gültige Lösung
+            if i > 1 and i != 0:
+                return False
+
+        # Zähler-Array wieder auf 0 setzen
+        occurrences = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     # Prüfe 3x3 Blöcke
     # Bestimme Blocknummer
-    for i in range(3):     # Blocknummer in x-Richtung
-        for j in range(3):  # Blocknummer in y-Richtung
-            occurrences = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for i in range(0, 3):     # Blocknummer in x-Richtung
+        for j in range(0, 3):  # Blocknummer in y-Richtung
             # Gehe inneren Block durch
-            for y in range(3):
-                for x in range(3):
+            for y in range(0, 3):
+                for x in range(0, 3):
                     # Bestimme globale Position
-                    pos_x = 3 * i + x
-                    pos_y = 3 * j + y
+                    posX = 3 * i + x
+                    posY = 3 * j + y
 
                     # Bestimme Zahl
-                    number = sudoku[pos_y][pos_x]
+                    number = sudoku[posY][posX]
 
                     # Erhöhe Zähler für Zahl um 1
-                    occurrences[number - 1] += 1
+                    occurrences[number] += 1
 
-            # Wenn Zahl häufiger als einmal vorkommt
-            # -> Keine gültige Lösung
-            if max(occurences) > 1:
-                return False
+            # Gehe Zähler-Array durch
+            for k in occurrences:
+                # Wenn Zahl häufiger als einmal vorkommt
+                # -> Keine gültige Lösung
+                if k > 1 and k != 0:
+                    return False
+
+            # Zähler-Array wieder auf 0 setzen
+            occurrences = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     # Wenn das Programm bis an diese Stelle kommt, wurde keine "return"-
     # Anweisung ausgeführt. Das bedeutet, die Prüfung ist erfolgreich!
@@ -78,5 +94,5 @@ sudoku = [[8, 3, 5, 4, 1, 6, 9, 2, 7],
           [9, 8, 1, 3, 4, 5, 2, 7, 6],
           [3, 7, 4, 9, 6, 2, 8, 1, 5]]
 
-print check_sudoku(sudoku)
+print checkSudoku(sudoku)
 

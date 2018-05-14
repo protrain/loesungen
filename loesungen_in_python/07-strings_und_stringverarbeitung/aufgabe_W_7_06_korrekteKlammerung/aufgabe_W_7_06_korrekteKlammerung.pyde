@@ -1,33 +1,43 @@
-def check_brackets(input):
-    """ Funktion zur Überprüfung eines Strings auf eine gültige
-    Klammerung. Der String wird an die Funktion übergeben.
-    Diese liefert am Ende einen Wahrheitswert, der angibt,
-    ob eine korrekte Klammerung vorliegt.
-    """
+# Funktion zur Überprüfung eines Strings auf eine gültige
+# Klammerung. Der String wird an die Funktion übergeben.
+# Diese liefert am Ende einen Wahrheitswert, der angibt,
+# ob eine korrekte Klammerung vorliegt.
+def checkBrackets(input):
     # Anzahl der noch geöffneten Klammern
-    open_brackets = 0
+    openBrackets = 0
+
+    # Ist die letzte Klammer eine geschlossene?
+    lastBracketClosed = True
 
     # Gehe Zeichen für Zeichen durch
-    for char in input:
+    for c in input:
         # Offene Klammer gefunden
-        if char == "(":
+        if c == "(":
             # Offene Klammeranzahl erhöhen
-            open_brackets += 1
+            openBrackets += 1
+
+            # Letzte Klammer ist somit nicht geschlossen
+            lastBracketClosed = False
+
         # Geschlossene Klammer gefunden
-        elif char == ")":
+        if c == ")":
             # gibt es eine geöffnete Klammer hierzu
-            if open_brackets > 0:
+            if openBrackets > 0:
                 # offene Klammeranzahl reduzieren
-                open_brackets -= 1
+                openBrackets -= 1
             else:  # sonst ist Klammerung nicht korrekt
                 return False
 
-    # Wenn keine offenen Klammern mehr vorhanden sind, wird true zurückgegeben
-    return open_brackets == 0
+            # Letzte Klammer ist damit geschlossen
+            lastBracketClosed = True
+
+    # Wenn keine offenen Klammern mehr vorhanden sind und die
+    # letzte Klammer geschlossen ist, wird true zurückgegeben
+    return openBrackets == 0 and lastBracketClosed
 
 
 # Startpunkt des Hauptprogramms
 # Hier wird die implementierte Stringverarbeitungsfunktion zu
 # Demonstrations- und Testzwecken aufgerufen.
-print check_brackets("(()(a)(()((c))))")
+print checkBrackets("(()(a)(()((c))))")
 
