@@ -18,4 +18,4 @@ Hier findet ihr eine [Übersicht mit allen bisher veröffentlichten Blogeinträg
 
 Der Quelltext in [blogserie-loesungen/windrad-ohne-processing](blogserie-loesungen/windrad-ohne-processing) bezieht sich auf den [Blogeintrag "Howto: Buch-Aufgaben ohne Processing lösen"].
 
-[Blogeintrag "Howto: Buch-Aufgaben ohne Processing lösen"]: https://protrain.github.io/news/2018/11/19/buch-aufgaben-ohne-processing-howto.html
+[Blogeintrag "Howto: Buch-Aufgaben ohne Processing lösen"]: https://protrain.github.io/blog/2018/11/19/buch-aufgaben-ohne-processing-howto.html
