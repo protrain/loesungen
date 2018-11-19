@@ -14,4 +14,8 @@ Alle aufgenommenen Lösungen findet ihr im Ordner [eure_loesungen](eure_loesunge
 
 Der Ordner [blogserie-loesungen](blogserie-loesungen/) enthält Quelltexte aus der mehrteiligen Blogserie zum Buch auf Hanser Update.
 
-[Hier findet ihr eine Übersicht mit allen bisher veröffentlichten Blogeinträgen der Serie](https://update.hanser-fachbuch.de/author/stephan-wiefling/).
+Hier findet ihr eine [Übersicht mit allen bisher veröffentlichten Blogeinträgen der Serie](https://update.hanser-fachbuch.de/author/stephan-wiefling/).
+
+Der Quelltext in [blogserie-loesungen/windrad-ohne-processing](blogserie-loesungen/windrad-ohne-processing) bezieht sich auf den [Blogeintrag "Howto: Buch-Aufgaben ohne Processing lösen"].
+
+[Blogeintrag "Howto: Buch-Aufgaben ohne Processing lösen"]: https://protrain.github.io/news/2018/11/19/buch-aufgaben-ohne-processing-howto.html
