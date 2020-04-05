@@ -1,6 +1,6 @@
 # Lösungsvorschläge zum Buch *Programmieren Trainieren*
 
-Dieses Repository enthält die Lösungsvorschläge für die Programmieraufgaben aus dem [Buch "Programmieren trainieren"](http://www.hanser-fachbuch.de/buch/Programmieren+trainieren/9783446454866) von Luigi Lo Iacono, Stephan Wiefling und Michael Schneider.
+Dieses Repository enthält die Lösungsvorschläge für die Programmieraufgaben aus dem [Buch "Programmieren trainieren"](https://www.hanser-fachbuch.de/buch/Programmieren+trainieren/9783446459113) (1. und 2. Auflage) von Luigi Lo Iacono, Stephan Wiefling und Michael Schneider.
 
 Alle Quelltexte dieses Repositories stehen unter den Bedingungen der MIT-Lizenz ([LICENSE](LICENSE)).
 
@@ -12,9 +12,7 @@ Alle aufgenommenen Lösungen findet ihr im Ordner [eure_loesungen](eure_loesunge
 
 ## Quelltexte der Blogserie zum Buch
 
-Der Ordner [blogserie-loesungen](blogserie-loesungen/) enthält Quelltexte aus der mehrteiligen Blogserie zum Buch auf Hanser Update.
-
-Hier findet ihr eine [Übersicht mit allen bisher veröffentlichten Blogeinträgen der Serie](https://update.hanser-fachbuch.de/author/stephan-wiefling/).
+Der Ordner [blogserie-loesungen](blogserie-loesungen/) enthält Quelltexte aus der mehrteiligen Blogserie zum Buch (ehemals auf Hanser Update, jetzt auf unserer [Buchwebseite](https://protrain.github.io)).
 
 Der Quelltext in [blogserie-loesungen/windrad-ohne-processing](blogserie-loesungen/windrad-ohne-processing) bezieht sich auf den [Blogeintrag "Howto: Buch-Aufgaben ohne Processing lösen"].
 
