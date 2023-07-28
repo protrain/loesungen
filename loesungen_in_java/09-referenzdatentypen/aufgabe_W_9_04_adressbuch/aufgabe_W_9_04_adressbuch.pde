@@ -9,7 +9,7 @@ public class Contact {
 
   // Konstruktor der zur Initialisierung der Klassen-
   // variablen die Id, Name, E-Mail-Adresse, Telefonnummer
-  // und Twitter-Adresse vorschreibt.
+  // und Social-Media-Adresse vorschreibt.
   public Contact(
     int id,
     String name,
@@ -28,7 +28,7 @@ public class Contact {
   // Strings mit den Kontaktdaten. Der generierte String
   // wird von der Methode zurückgeliefert.
   public String toString() {
-    return id + " { " + name + "\t" + email + "\t" + phone + "\t" +
+    return id + ": " + name + "\t" + email + "\t" + phone + "\t" +
         twitter;
   }
 
@@ -61,7 +61,7 @@ public class Adressbook {
   // mit allen Adressbucheinträgen. Der String wird von
   // der Methode zurückgeliefert.
   public String showAll() {
-    String output = "Adressbuch { " + name + "\n";
+    String output = "Adressbuch: " + name + "\n";
 
     // Gehe jeden Kontakt durch
     for (int i = 0; i < contacts.length; i++) {
@@ -199,4 +199,3 @@ public void setup() {
 
   println(arbeit.showByName("Flo Kati"));
 }
-

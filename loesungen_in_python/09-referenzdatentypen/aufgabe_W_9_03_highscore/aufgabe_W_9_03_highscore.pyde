@@ -12,6 +12,7 @@ class HighscoreEntry:
     def __str__(self):
         return self.__nickname + " - " + str(self.__points) + " Punkte"
 
+
 # Klasse zur Realisierung einer Highscore-Tabelle
 class HighscoreTable:
 
@@ -25,32 +26,32 @@ class HighscoreTable:
     # Öffentliche Methode zum Hinzufügen eines neuen Eintrags in die
     # Highscore-Liste. Übergeben werden der Nickname, die erreichten
     # Punkte sowie die Position innerhalb der Liste.
-    def addEntry(self, nickname, points, position):
+    def add_entry(self, nickname, points, position):
         # Nutze die HighscoreEntry-Klasse
         entry = HighscoreEntry(nickname, points)
 
         # Gehe alte Liste bis zur Position durch
-        entriesTemp = []
+        entries_temp = []
         for i in range(0, position - 1):
             # Füge altes Element hinzu
-            entriesTemp.append(self.__entries[i])
+            entries_temp.append(self.__entries[i])
 
         # Füge jetzt neues Element hinzu
-        entriesTemp.append(entry)
+        entries_temp.append(entry)
 
         # Gehe Rest der Liste durch
         for i in range(position - 1, len(self.__entries)):
             # Füge altes Element hinzu
-            entriesTemp.append(self.__entries[i])
+            entries_temp.append(self.__entries[i])
 
         # Setze temporäre Liste als neue Liste
-        self.__entries = entriesTemp
+        self.__entries = entries_temp
 
     # Öffentliche Methode zur Ausgabe der Highscore-Liste
-    def printList(self):
+    def print_list(self):
         pos = 1
         for entry in self.__entries:
-            print "Platz " + str(pos) + ": " + str(entry)
+            print("Platz " + str(pos) + ": " + str(entry))
             pos += 1
 
 
@@ -58,6 +59,6 @@ class HighscoreTable:
 # Hier werden die implementierten Klassen zu Demonstrations- und
 # Testzwecken instanziiert und verwendet.
 hs = HighscoreTable()
-hs.addEntry("Dieter", 666, 1)
-hs.addEntry("Thomas", 12, 6)
-hs.printList()
+hs.add_entry("Dieter", 666, 1)
+hs.add_entry("Thomas", 12, 6)
+hs.print_list()

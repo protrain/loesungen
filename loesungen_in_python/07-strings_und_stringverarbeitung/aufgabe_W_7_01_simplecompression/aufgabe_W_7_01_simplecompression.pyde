@@ -2,42 +2,46 @@
 # Als Eingabeparameter wird der zu komprimierende String
 # übergeben. Die Funktion liefert das Ergebnis der Komprimierung
 # zurück.
-def simpleCompression(input):
-    cCount = 0                          # Gezählte gleiche Zeichen
-    lastChar = input[0]                 # Letztes Zeichen
+def simple_compression(input_data):
+    c_count = 0                          # Gezählte gleiche Zeichen
+    last_char = input_data[0]                 # Letztes Zeichen
     output = ""                         # Komprimierter String
 
     # Gehe alle Zeichen im String durch
-    for currentChar in input:
+    for current_char in input_data:
 
         # Wenn Zeichen übereinstimmen:
-        if currentChar == lastChar:
+        if current_char == last_char:
             # Erhöhe Zähler
-            cCount += 1
+            c_count += 1
         else:
             # Anzahl + Zeichen an Ausgabestring schreiben
-            output += str(cCount) + lastChar
+            output += str(c_count) + last_char
 
             # Zeichenzähler zurücksetzen
-            cCount = 1
+            c_count = 1
 
         # Letztes Zeichen aktualisieren
-        lastChar = currentChar
+        last_char = current_char
 
     # Letztes Zeichen aktualisieren
-    output += str(cCount) + lastChar
+    output += str(c_count) + last_char
 
     return output
+
 
 # Startpunkt des Hauptprogramms
 # Hier wird die implementierte Funktion zu Demonstrations- und
 # Testzwecken aufgerufen.
 def setup():
-    bwImageStringA = "WWWWBBBWBBBBBBWW"  # compressed: "4W3B1W6B2W"
-    bwImageStringB = "BBBBWWWWWWWWWB"    # compressed: "4B9W1B"
-    bwImageStringC = "WBBBBWWWWWWB"      # compressed: "1W4B6W1B"
+    bw_image_string_a = "WWWWBBBWBBBBBBWW"  # compressed: "4W3B1W6B2W"
+    bw_image_string_b = "BBBBWWWWWWWWWB"    # compressed: "4B9W1B"
+    bw_image_string_c = "WBBBBWWWWWWB"      # compressed: "1W4B6W1B"
 
-    print simpleCompression(bwImageStringA)
-    print simpleCompression(bwImageStringB)
-    print simpleCompression(bwImageStringC)
+    print(simple_compression(bw_image_string_a))
+    print(simple_compression(bw_image_string_b))
+    print(simple_compression(bw_image_string_c))
 
+# Bei der Ausführungn in einer reinen Python-Umgebung, muss die
+# folgende Anweisung ergänzt werden
+#setup()

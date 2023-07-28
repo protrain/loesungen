@@ -1,5 +1,5 @@
 # Klasse, die den Schrittzähler realisiert
-class StepCounter:
+class step_counter:
     # Initialisierung
     # Alle Instanzvariablen werden im Konstruktor initialisiert
     # Die Klasse kann nur mit der Angabe eines Schrittzählers
@@ -10,7 +10,7 @@ class StepCounter:
         self.__steps = 0
 
     # Öffentliche Methode, um den Schrittzähler um 1 zu erhöhen
-    def incrementSteps(self):
+    def increment_steps(self):
         self.__steps += 1
 
     # Öffentliche Methode zur Erzeugung einer Statusnachricht, die
@@ -24,13 +24,13 @@ class StepCounter:
 # instanziiert und verwendet.
 
 
-# Objekt der Klasse StepCounter durch Konstrukturaufruf erzeugen
+# Objekt der Klasse step_counter durch Konstrukturaufruf erzeugen
 # Das Datum wird auf den 11.11.2011 gesetzt
-sc = StepCounter("11.11.2011")
+sc = step_counter("11.11.2011")
 
 # Gehe 1111 Schritte
 for i in range(0, 1111):
-    sc.incrementSteps()
+    sc.increment_steps()
 
 # Gebe Schritte aus
-print sc
+print(sc)

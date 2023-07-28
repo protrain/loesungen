@@ -2,8 +2,7 @@
 # Erhält das Volumen als Fließkommazahl und gibt den berechneten
 # Wert mit der Einheit als String zurück
 
-
-def volumeConverter(volume):
+def volume_converter(volume):
     # ist das Volumen größer oder gleich 1.0
     if volume >= 1.0:
         return str(volume) + " l"  # dann Rückgabe Wert mit Einheit "l"
@@ -29,8 +28,7 @@ def volumeConverter(volume):
 # Hier wird die implementierte Funktion zu Demonstrations- und
 # Testzwecken aufgerufen.
 
-print volumeConverter(1.0)
-print volumeConverter(0.42)
-print volumeConverter(0.023)
-print volumeConverter(0.00023)
-
+print(volume_converter(1.0))
+print(volume_converter(0.42))
+print(volume_converter(0.023))
+print(volume_converter(0.00023))

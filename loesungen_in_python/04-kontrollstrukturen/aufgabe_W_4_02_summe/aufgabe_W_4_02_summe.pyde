@@ -6,5 +6,4 @@ for i in range(3, 28):
     summe += i
 
 # Gebe Ergebnis aus
-print "SUM(3, 27): " + str(summe)
-
+print("SUM(3, 27): " + str(summe))

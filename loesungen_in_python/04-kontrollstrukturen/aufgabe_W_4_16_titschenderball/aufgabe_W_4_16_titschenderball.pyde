@@ -5,7 +5,7 @@ t = 0
 y = 10
 
 # Position des Bodens
-yBottom = 600
+y_bottom = 600
 
 # Gravitationskraft, hier um ein Zehntel herunterskaliert
 g = 9.81 / 10.0
@@ -17,8 +17,8 @@ v = g
 cor = 0.7
 
 # Berechne Zeitpunkt, an dem die Geschwindigkeit 0 wird
-v1 = sqrt(v * v + 2 * g * (y - yBottom))
-tBorder = 1 / g * (v + v1 * ((1 + cor) / (1 - cor)))
+v_1 = sqrt(v * v + 2 * g * (y - y_bottom))
+t_border = 1 / g * (v + v_1 * ((1 + cor) / (1 - cor)))
 
 
 def setup():
@@ -27,12 +27,12 @@ def setup():
 
 
 def draw():
-    global t, y, yBottom, g, v, cor, v1, tBorder
+    global t, y, y_bottom, g, v, cor, v_1, t_border
     # Male den Hintergrund
     background(255)
 
     # Haben wir den Grenzzeitpunkt erreicht
-    if t > tBorder:
+    if t > t_border:
         # Setze die Geschwindigkeit auf 0 und stoppe damit den Ball
         v = 0
     else:
@@ -43,18 +43,18 @@ def draw():
     y = y + v
 
     # Berührt unser Ball den Boden
-    if y >= yBottom:
+    if y >= y_bottom:
         # Verändere Richtung und Geschwindigkeit des Balles
         v = v * -cor
 
         # Setze die Position auf den Boden
-        y = yBottom
+        y = y_bottom
 
     # Setze die Linienfarbe auf Schwarz
     stroke(0)
 
     # Male den Boden
-    line(0, yBottom, width, yBottom)
+    line(0, y_bottom, width, y_bottom)
 
     # Setze die Ballfarbe auf Grau
     fill(125)

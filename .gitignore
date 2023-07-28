@@ -35,3 +35,8 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# External Data should not be pushed to the server #
+####################################################
+externe_daten/sentiws/data/*
+externe_daten/anton-font/data/*

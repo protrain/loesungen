@@ -1,4 +1,4 @@
-# Die Funktion zur Berechnung endlicher Produkte erhält den
+# Die Funktion zur Berechnung elicher Produkte erhält den
 # Startwert s und den Endwert e als Integer-Werte und liefert
 # als Ergebnis einen Integer-Wert zurück.
 def product(s, e):
@@ -13,9 +13,9 @@ def product(s, e):
     elif e < s:
         # Vertausche Werte, damit die for-Schleife
         # vom kleinsten zum größten Wert laufen kann
-        eTemp = e               # Temporäres Speichern von e
-        e = s                   # Tauschen..
-        s = eTemp
+        e_temp = e             # Temporäres Speichern von e
+        e = s               # Tauschen..
+        s = e_temp
 
     # Deklaration und Initialisierung der Variablen für das Ergebnis
     # Der Startwert muss 1 sein (wegen Multiplikation)
@@ -27,8 +27,9 @@ def product(s, e):
     # Das Ergebnis zurückliefern
     return result
 
+
 # Die Funktion zur Berechnung der Fakultät
-# verwendet die Funktion zur Berechnung endlicher Produkte.
+# verweet die Funktion zur Berechnung elicher Produkte.
 # An die Funktion wird der Wert n übergeben, für die die
 # Fakultät berechnet werden soll.
 def factorial(n):
@@ -38,5 +39,4 @@ def factorial(n):
 # Startpunkt des Hauptprogramms
 # Hier wird die implementierte Funktion zu Demonstrations- und
 # Testzwecken aufgerufen.
-print factorial(6)
-
+print(factorial(6))

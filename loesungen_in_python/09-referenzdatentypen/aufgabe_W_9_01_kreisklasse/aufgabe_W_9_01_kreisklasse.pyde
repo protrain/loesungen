@@ -1,3 +1,7 @@
+# Bei der Ausführung in einer reinen Python-Umgebung, muss die
+# Library importiert werden
+#from math import pi as PI
+
 # Öffentliche Klasse zur Repräsentation eines Kreises
 class Circle:
     # Konstruktor, der die Position im Koordinatensystem
@@ -12,11 +16,11 @@ class Circle:
         return PI * self.radius * self.radius
 
     # Methode zur Ausgabe
-    def toConsole(self):
+    def to_console(self):
         area = str(self.area())
-        output =  "Ich stehe bei " + str(self.position) + " und bin " + area
+        output = "Ich stehe bei " + str(self.position) + " und bin " + area
         output += " gross."
-        print output
+        print(output)
 
 
 # Interne Klasse zur Repräsentation einer Koordinate
@@ -42,4 +46,4 @@ class Coordinate:
 # Hier werden die implementierten Klassen zu Demonstrations- und
 # Testzwecken instanziiert und verwendet.
 kreis = Circle(10, 43, 4)
-kreis.toConsole()
+kreis.to_console()

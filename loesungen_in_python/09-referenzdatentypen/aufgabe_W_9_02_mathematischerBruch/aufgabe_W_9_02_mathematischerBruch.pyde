@@ -11,24 +11,24 @@ class Fraction:
     # gebene Bruch addiert und als eigenständiges Objekt
     # zurückgegeben.
     def add(self, f):
-        z1 = self.numerator * f.getDenominator()
-        z2 = self.denominator * f.getNumerator()
-        return Fraction(z1 + z2, self.denominator * f.getDenominator())
+        z_1 = self.numerator * f.get_denominator()
+        z_2 = self.denominator * f.get_numerator()
+        return Fraction(z_1 + z_2, self.denominator * f.get_denominator())
 
     # Öffentliche Methode zum Multiplizieren eines Bruchs.
     # Der aktuelle Bruch wird mit dem an die Methode über-
     # gebenen Bruch multipliziert und als eigenständiges
     # Objekt zurückgegeben.
     def multiply(self, f):
-        return Fraction(self.numerator * f.getNumerator(),
-                        self.denominator * f.getDenominator())
+        return Fraction(self.numerator * f.get_numerator(),
+                        self.denominator * f.get_denominator())
 
     # Öffentliche Methode, die den Zähler zurückliefert
-    def getNumerator(self):
+    def get_numerator(self):
         return self.numerator
 
     # Öffentliche Methode, die den Nenner zurückliefert
-    def getDenominator(self):
+    def get_denominator(self):
         return self.denominator
 
     # Öffentliche Methode zur Ausgabe eines Bruchs
@@ -47,8 +47,8 @@ f2 = Fraction(1, 4)
 
 # 1/2 + 1/4 = 6/8
 sum = f1.add(f2)
-print str(f1) + " + " + str(f2) + " = " + str(sum)
+print(str(f1) + " + " + str(f2) + " = " + str(sum))
 
 # 1/2 + 1/4 = 1/8
 mult = f1.multiply(f2)
-print str(f1) + " * " + str(f2) + " = " + str(mult)
+print(str(f1) + " * " + str(f2) + " = " + str(mult))

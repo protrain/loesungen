@@ -11,15 +11,15 @@ def product(s, e):
     elif e < s:
         # Vertausche Werte, damit die for-Schleife
         # vom kleinsten zum größten Wert laufen kann
-        eTemp = e
+        e_temp = e
         e = s
-        s = eTemp
+        s = e_temp
 
     # Deklaration und Initialisierung der Variablen für das Ergebnis
     # Der Startwert muss 1 sein (wegen Multiplikation)
     result = 1
     for i in range(s, e + 1):  # Zähle vom Start- bis Endwert
-        result *= i            # und multipliziere die Zahl mit dem
+        result *= i                  # und multipliziere die Zahl mit dem
         # Ergebnis
 
     # Das Ergebnis zurückliefern
@@ -31,5 +31,8 @@ def product(s, e):
 # Testzwecken aufgerufen.
 def setup():
     result = product(4, 3)
-    print "Prod(4, 3): " + str(result)
+    print("product(4, 3): " + str(result))
 
+# Bei der Ausführungn in einer reinen Python-Umgebung, muss die
+# folgende Anweisung ergänzt werden
+#setup()

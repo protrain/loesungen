@@ -7,19 +7,18 @@ c = 3
 maxi = -2147483648  # kleinste erlaubte Integer-Zahl
 
 # Maximum bestimmen
-if a > b:  			# a > b
-    if a > c:  		# a > b > c
+if a > b:        # a > B
+    if a > c:      # a > b > C
         maxi = a
-    else:  			# c > a > b
+    else:        # c > a > B
         maxi = c
-else:  				# b > a
-    if b > c:  		# b > a > c
+else:          # b > A
+    if b > c:      # b > a > C
         maxi = b
-    else:  			# c > b > a
+    else:        # c > b > A
         maxi = c
 
 # Ausgabe des Maximums in der Konsole
 output = "Der größte Wert in der Menge {" + str(a) + ", "
 output += str(b) + ", " + str(c) + "} lautet: " + str(maxi)
-print output
-
+print(output)

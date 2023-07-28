@@ -34,4 +34,3 @@ println(
   "Ergebnis: " + home + ":" + guest + ", Tipp: " + betHome + ":" +
     betGuest + " -> Punkte: " + points
 );
-

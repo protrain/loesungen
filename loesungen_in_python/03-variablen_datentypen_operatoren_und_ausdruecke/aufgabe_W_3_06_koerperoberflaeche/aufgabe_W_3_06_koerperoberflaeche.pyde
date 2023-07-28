@@ -1,3 +1,7 @@
+# Bei der Ausführung in einer reinen Python-Umgebung, muss die
+# Library importiert werden
+#from math import sqrt
+
 # Körpergröße in cm
 height = 180
 
@@ -12,5 +16,5 @@ b = sqrt(a)
 # Ausgabe des Ergebnisses
 output = "Ein " + str(height) + " cm großer und " + str(weight)
 output += " kg schwerer Mensch verfügt über ca " + str(b) + " m^2 Haut."
-print output
 
+print(output)

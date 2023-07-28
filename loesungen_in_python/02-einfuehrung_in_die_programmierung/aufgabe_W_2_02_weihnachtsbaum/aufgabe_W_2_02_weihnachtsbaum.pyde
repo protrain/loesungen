@@ -5,11 +5,11 @@
 # Diese fügt am Ende der Ausgabe einen Zeilenumbruch hinzu. Die nächste
 # Konsolenausgabe befindet sich damit eine Zeile unter dieser am
 # linken Rand des Konsolenfensters.
-print "      *"
-print "     ***"
-print "    *****"
-print "   *******"
-print "  *********"
-print " ***********"
-print "*************"
-print "     ***"
+print("      *")
+print("     ***")
+print("    *****")
+print("   *******")
+print("  *********")
+print(" ***********")
+print("*************")
+print("     ***")

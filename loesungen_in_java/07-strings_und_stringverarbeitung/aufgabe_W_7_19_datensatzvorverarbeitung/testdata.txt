@@ -1,0 +1,4 @@
+erster|ABCD	0.013	erstere,erstens,erst
+Zweiter|BB	-0.330	zweit,zweier
+Dritter|A	0.111
+

@@ -1,6 +1,6 @@
 # Lösungsvorschläge zum Buch *Programmieren Trainieren*
 
-Dieses Repository enthält die Lösungsvorschläge für die Programmieraufgaben aus dem [Buch "Programmieren trainieren"](https://www.hanser-fachbuch.de/buch/Programmieren+trainieren/9783446459113) (1. und 2. Auflage) von Luigi Lo Iacono, Stephan Wiefling und Michael Schneider.
+Dieses Repository enthält die Lösungsvorschläge für die Programmieraufgaben aus dem [Buch "Programmieren trainieren"](https://www.hanser-fachbuch.de/buch/Programmieren+trainieren/9783446459113) (3. Auflage) von Luigi Lo Iacono, Stephan Wiefling und Michael Schneider. Die Lösungen für vorherige Auflagen findet ihr unter [Releases](https://github.com/protrain/loesungen/releases).
 
 Alle Quelltexte dieses Repositories stehen unter den Bedingungen der MIT-Lizenz ([LICENSE](LICENSE)).
 

@@ -2,42 +2,41 @@
 # Klammerung. Der String wird an die Funktion übergeben.
 # Diese liefert am Ende einen Wahrheitswert, der angibt,
 # ob eine korrekte Klammerung vorliegt.
-def checkBrackets(input):
+def check_brackets(input_data):
     # Anzahl der noch geöffneten Klammern
-    openBrackets = 0
+    open_brackets = 0
 
     # Ist die letzte Klammer eine geschlossene?
-    lastBracketClosed = True
+    last_bracket_closed = True
 
     # Gehe Zeichen für Zeichen durch
-    for c in input:
+    for c in input_data:
         # Offene Klammer gefunden
         if c == "(":
             # Offene Klammeranzahl erhöhen
-            openBrackets += 1
+            open_brackets += 1
 
             # Letzte Klammer ist somit nicht geschlossen
-            lastBracketClosed = False
+            last_bracket_closed = False
 
         # Geschlossene Klammer gefunden
         if c == ")":
             # gibt es eine geöffnete Klammer hierzu
-            if openBrackets > 0:
+            if open_brackets > 0:
                 # offene Klammeranzahl reduzieren
-                openBrackets -= 1
+                open_brackets -= 1
             else:  # sonst ist Klammerung nicht korrekt
                 return False
 
             # Letzte Klammer ist damit geschlossen
-            lastBracketClosed = True
+            last_bracket_closed = True
 
     # Wenn keine offenen Klammern mehr vorhanden sind und die
     # letzte Klammer geschlossen ist, wird true zurückgegeben
-    return openBrackets == 0 and lastBracketClosed
+    return open_brackets == 0 and last_bracket_closed
 
 
 # Startpunkt des Hauptprogramms
 # Hier wird die implementierte Stringverarbeitungsfunktion zu
 # Demonstrations- und Testzwecken aufgerufen.
-print checkBrackets("(()(a)(()((c))))")
-
+print(check_brackets("(()(a)(()((c))))"))

@@ -14,4 +14,3 @@ println(
   "Ein " + height + " cm großer und " + weight + " kg schwerer Mensch "
   + "verfügt über ca " + b + " m^2 Haut."
 );
-
