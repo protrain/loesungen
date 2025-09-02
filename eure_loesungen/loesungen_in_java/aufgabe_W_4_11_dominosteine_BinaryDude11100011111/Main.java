@@ -1,3 +1,8 @@
+/*
+ *  Lösung von BinaryDude11100011111 (https://github.com/BinaryDude11100011111)
+ *  Hinweis: Der Code ist erst ab Java 11 kompatibel.
+ */
+
 public class Main {
     public static void main(String[] args) {
         String indent = "        ";
